@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "floatingactionbutton",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/fummicc1/FloatingActionButton",
+      "state" : {
+        "branch" : "main",
+        "revision" : "6c1186e03ea34d27e8221a8f2f7c5fa0b6f4e848"
+      }
+    }
+  ],
+  "version" : 2
+}
