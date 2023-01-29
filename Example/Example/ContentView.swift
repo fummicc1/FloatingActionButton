@@ -16,22 +16,22 @@ struct ContentView: View {
             fab: .image(Image(systemName: "plus")),
             color: .red
         ) {
-            VStack {
-                Text("BottomTrailing FAB")
-                    .font(.largeTitle)
-                    .fontWeight(.medium)
-                    .padding()
-                Button {
-                    AudioServicesPlaySystemSound(1001)
-                } label: {
-                    Text("Tap")
-                }
-                .foregroundColor(.white)
-                .background(Color.red)
-                .buttonStyle(.bordered)
-                .cornerRadius(16)
+            Text("BottomTrailing FAB")
+                .font(.largeTitle)
+                .fontWeight(.medium)
                 .padding()
-            }
+        } didPress: {
+            AudioServicesPlaySystemSound(1000)
+        }
+        FloatingActionable.extended(
+            .bottomLeading,
+            text: Text("subtract"),
+            image: Image(systemName: "minus")
+        ) {
+            Text("Extended FAB")
+                .font(.largeTitle)
+                .fontWeight(.medium)
+                .padding()
         } didPress: {
             AudioServicesPlaySystemSound(1000)
         }
