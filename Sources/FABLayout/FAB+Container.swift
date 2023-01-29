@@ -73,8 +73,6 @@ public struct FABContainer {
             Rectangle()
                 .fill(backgroundColor)
                 .shape(shape: shape)
-                .padding(.vertical, -1.5)
-                .padding(.horizontal, -1.5)
                 .shadow(
                     color: Color.black.opacity(0.3),
                     radius: 3, x: 0, y: 1

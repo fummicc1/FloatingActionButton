@@ -11,13 +11,14 @@ public struct FloatingActionable<Content: View>: View {
 
     public init(
         _ edge: Edge = .bottomTrailing,
-        _ fabContent: FABContent,
+        fab fabContent: FABContent,
+        color: Color = .accentColor,
         content: @escaping () -> Content,
         didPress: @escaping () -> Void
     ) {
         self.init(
             edge,
-            FABContainer(fabContent),
+            FABContainer(fabContent, color: color),
             content: content,
             didPress: didPress
         )
@@ -75,19 +76,23 @@ struct FloatingActionable_Previews: PreviewProvider {
     static var previews: some View {
         FloatingActionable(
             .bottomTrailing,
-            .image(Image(systemName: "plus"))
+            fab: .image(Image(systemName: "plus")),
+            color: .red
         ) {
             VStack {
-                Text("Simple FAB")
+                Text("BottomTrailing FAB")
                     .font(.largeTitle)
                     .fontWeight(.medium)
                     .padding()
                 Button {
                     AudioServicesPlaySystemSound(1001)
                 } label: {
-                    Text("タップ")
+                    Text("Tap")
                 }
-                .buttonStyle(.borderedProminent)
+                .foregroundColor(.white)
+                .background(Color.red)
+                .buttonStyle(.bordered)
+                .cornerRadius(16)
                 .padding()
             }
         } didPress: {
@@ -97,19 +102,23 @@ struct FloatingActionable_Previews: PreviewProvider {
         NavigationView {
             FloatingActionable(
                 .topLeading,
-                .image(Image(systemName: "minus"))
+                fab: .image(Image(systemName: "minus")),
+                color: .indigo
             ) {
                 Button {
                     AudioServicesPlaySystemSound(1001)
                 } label: {
-                    Text("タップ")
+                    Text("Tap")
                 }
-                .buttonStyle(.borderedProminent)
+                .foregroundColor(.white)
+                .background(Color.indigo)
+                .buttonStyle(.bordered)
+                .cornerRadius(16)
                 .padding()
             } didPress: {
                 AudioServicesPlaySystemSound(1000)
             }
-            .navigationTitle("Navigation FAB")
+            .navigationTitle("TopLeading FAB")
         }
 
         NavigationView {
@@ -121,9 +130,12 @@ struct FloatingActionable_Previews: PreviewProvider {
                 Button {
                     AudioServicesPlaySystemSound(1001)
                 } label: {
-                    Text("タップ")
+                    Text("Tap")
                 }
-                .buttonStyle(.borderedProminent)
+                .foregroundColor(.white)
+                .background(Color.accentColor)
+                .buttonStyle(.bordered)
+                .cornerRadius(16)
                 .padding()
             } didPress: {
                 AudioServicesPlaySystemSound(1000)
