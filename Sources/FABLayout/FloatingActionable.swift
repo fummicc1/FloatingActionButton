@@ -9,7 +9,7 @@ public struct FloatingActionable<Content: View>: View {
     let didPress: () -> Void
     let fabContainer: FABContainer
 
-    init(
+    public init(
         _ edge: Edge = .bottomTrailing,
         _ fabContent: FABContent,
         content: @escaping () -> Content,
