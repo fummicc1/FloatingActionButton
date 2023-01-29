@@ -4,12 +4,12 @@
 import PackageDescription
 
 let package = Package(
-    name: "FABLayout",
+    name: "FloatingActionButton",
     platforms: [.iOS(.v16)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "FABLayout",
+            name: "FloatingActionButton",
             targets: ["FABLayout"]),
     ],
     dependencies: [
